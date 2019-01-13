@@ -10,13 +10,13 @@ describe('dado que acessei a página login', function () {
     });
 
     it('quando a senha é inválida', function () {
-        login_page.with('me@papito.io', '123abc');
+        login_page.with('me@teste.io', '123abc');
 
-        expect(login_page.alert.getText()).toEqual('Senha inválida.');
+        expect(login_page.alert.getText()).toEqual('Usuário não cadastrado.');
     });
 
     it('quando o usuário não está cadastrado', function () {
-        login_page.with('404@papito.com', 'abc123');
+        login_page.with('404@teste.com', 'abc123');
 
         expect(login_page.alert.getText()).toEqual('Usuário não cadastrado.');
     });

@@ -15,7 +15,7 @@ describe('quando eu cadastro uma tarefa @temp', () => {
         tasksDb.deleteByName(newTask.title).then(res => console.log(res));
 
         login_page.go();
-        login_page.with("tasks@teste.com.br", "123456");
+        login_page.with("testesb@teste.com", "123456");
         tasks_page.newTaskButton.click();
 
         tasks_page.addTask(newTask);
@@ -37,7 +37,7 @@ describe('quando tento cadastradar uma tarefa', () => {
 
     beforeAll(() => {
         login_page.go();
-        login_page.with("tasks@teste.com.br", "123456");
+        login_page.with("testesb@teste.com", "123456");
         tasks_page.newTaskButton.click();
     });
 
@@ -67,13 +67,13 @@ describe('quando eu apago um tarefa', () => {
     beforeAll(async () => {
         await tasksDb.deleteByName(newTask.title).then(res => console.log(res));
 
-        await usersDb.getByEmail("tasks@teste.com.br").then((user) => {
+        await usersDb.getByEmail("testesb@teste.com").then((user) => {
             newTask.createdBy = user._id;
         });
 
         await tasksDb.addTask(newTask);
         login_page.go();
-        login_page.with("tasks@teste.com.br", "123456");
+        login_page.with("testesb@teste.com", "123456");
     });
 
     it('então está tarefa não deve ser exibida na lista', () => {

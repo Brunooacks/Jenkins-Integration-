@@ -3,10 +3,10 @@
 exports.config = {
     //directConnect: true,
     seleniumAddress: 'http://selenium_server:4444/wd/hub',
-    framework: 'jasmine2',
-    specs: ['specs/**-spec.js'],
-    baseUrl: 'https://mark7.herokuapp.com',
-    onPrepare: function(){
+    framework      : 'jasmine2',
+    specs          : ['specs/**-spec.js'],
+    baseUrl        : 'https://mark7.herokuapp.com',
+    onPrepare      : function(){
         browser.manage().timeouts().implicitlyWait(10000);
         browser.ignoreSynchronization = true;
 
@@ -37,17 +37,17 @@ exports.config = {
 
         jasmine.getEnv().addReporter(new SpecReporter({
 			spec: {
-				displayStacktrace: true, 
+				displayStacktrace   : true,
 				displayErrorMessages: true,
-				displayFailed: true,
-				displayDuration: true 
+				displayFailed       : true,
+				displayDuration     : true
 			},
 			summary: {
-				displayErrorMessages: true, 
-				displayStacktrace: false, 
-				displaySuccessful: true, 
-				displayFailed: true, 
-				displayDuration: true
+				displayErrorMessages: true,
+				displayStacktrace   : false,
+				displaySuccessful   : true,
+				displayFailed       : true,
+				displayDuration     : true
 			},
 			colors: {
 				enabled: true
