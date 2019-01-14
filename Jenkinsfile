@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent none
     triggers {
         cron('45 23-18/2 * * 1-7') 
     }
